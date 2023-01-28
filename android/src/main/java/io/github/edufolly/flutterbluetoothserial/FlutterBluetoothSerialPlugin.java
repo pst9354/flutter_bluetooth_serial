@@ -447,25 +447,25 @@ public class FlutterBluetoothSerialPlugin implements FlutterPlugin, ActivityAwar
     private void ensurePermissions(EnsurePermissionsCallback callbacks) {
         boolean permissionGranted = (
                 ContextCompat.checkSelfPermission(activity,
-                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                        android.Manifest.permission.ACCESS_COARSE_LOCATION)
                         == PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(activity,
-                        Manifest.permission.ACCESS_FINE_LOCATION)
+                        android.Manifest.permission.ACCESS_FINE_LOCATION)
                         == PackageManager.PERMISSION_GRANTED);
 
-        String[] requestString = new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION};
+        String[] requestString = new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                android.Manifest.permission.ACCESS_FINE_LOCATION};
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             permissionGranted = (
                     ContextCompat.checkSelfPermission(activity,
-                            Manifest.permission.BLUETOOTH_SCAN)
+                            android.Manifest.permission.BLUETOOTH_SCAN)
                             == PackageManager.PERMISSION_GRANTED
                     && ContextCompat.checkSelfPermission(activity,
-                            Manifest.permission.BLUETOOTH_CONNECT)
+                            android.Manifest.permission.BLUETOOTH_CONNECT)
                             == PackageManager.PERMISSION_GRANTED);
-            requestString = new String[]{Manifest.permission.BLUETOOTH_SCAN,
-                    Manifest.permission.BLUETOOTH_CONNECT};
+            requestString = new String[]{android.Manifest.permission.BLUETOOTH_SCAN,
+                    android.Manifest.permission.BLUETOOTH_CONNECT};
         }
 
         if (!permissionGranted) {
