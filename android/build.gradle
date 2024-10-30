@@ -18,6 +18,7 @@ rootProject.allprojects {
 }
 apply plugin: 'com.android.library'
 android {
+    namespace 'io.github.edufolly.flutterbluetoothserial'
     compileSdkVersion 33
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
